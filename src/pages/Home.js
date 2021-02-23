@@ -1,7 +1,7 @@
 import React from "react";
 import {useStyles} from './HomeStyles'
 
-export function Home() {
+function Home() {
   const classes = useStyles();
   return(
     <div className={classes.homeContainer}>
@@ -9,3 +9,5 @@ export function Home() {
     </div>
   );
 }
+
+export default Home;
