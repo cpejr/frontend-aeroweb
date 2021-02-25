@@ -1,35 +1,48 @@
 import React, {useState} from "react";
 import {useStyles} from './HomeStyles';
-import Background2 from "./GradienteHome.svg";
+import Background1 from "./GradienteHome.svg";
+import Background2 from "./GradienteCursos.svg";
+import Background3 from "./GradienteQuemSomos.svg";
+import Background4 from "./GradienteContato.svg";
 
 function Home() {
 
-  var x = -300;
+  var x = 90;
+  var grad = Background1;
   const [xx, setXX] = useState();
+  const [gradiente, setGradiente] = useState();
 
   function rodar1(){
-      x=-300;
+      x=90;
+      grad = Background1;
       setXX(x);
+      setGradiente(grad);
   }
 
   function rodar2(){
-      x=-600;
+      x=60;
+      grad = Background2;
       setXX(x);
+      setGradiente(grad);
   }
 
   function rodar3(){
-      x=-900;
+      x=30;
+      grad = Background3;
       setXX(x);
+      setGradiente(grad);
   }
 
   function rodar4(){
-      x=-1300;
+      x=0;
+      grad = Background4;
       setXX(x);
+      setGradiente(grad);
   }
 
   const classes = useStyles();
   return(
-    <div className={classes.homeContainer} style={{backgroundImage: "url("+ Background2 +")", height: "100vh"}}>
+    <div className={classes.homeContainer} style={{backgroundImage: "url("+ gradiente +")", height: "100vh"}}>
       <div className={classes.homeContainerChildren} style={{backgroundPositionX: xx, backgroundPositionY: -200, height: "100vh"}}>
         <div className={classes.homeGeneral}>
           <div className={classes.button1}>
