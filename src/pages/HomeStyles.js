@@ -19,20 +19,22 @@ export const useStyles = makeStyles({
   },
   homeGeneral: {
     display: 'flex',
-    paddingTop: '50vh',
-    alignSelf: 'center',
   },
   button1: {
-    paddingRight: '10vw',
+    paddingTop: '25vh',
+    paddingLeft: '15vw',
   },
   button2: {
-    paddingRight: '5vw',
+    paddingTop: '35vh',
+    paddingLeft: '15vw',
   },
   button3: {
-    paddingLeft: '5vw',
+    paddingTop: '60vh',
+    paddingLeft: '10vw',
   },
   button4: {
-    paddingLeft: '10vw',
+    paddingTop: '77vh',
+    paddingLeft: '15vw',
   },
   flying: {
     animation: 'fly 0.5s',

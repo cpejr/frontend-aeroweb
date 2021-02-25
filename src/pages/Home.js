@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, {useState, useRef} from "react";
 import {useStyles} from './HomeStyles';
 import Background1 from "./GradienteHome.svg";
 import Background2 from "./GradienteCursos.svg";
@@ -8,19 +8,14 @@ import airplane from './AviaoIcon.svg';
 
 function Home() {
 
-  var x = 90;
+  var x1 = 90;
   var grad = Background1;
   const [xx, setXX] = useState();
-  const [gradiente, setGradiente] = useState();
+  const [gradiente, setGradiente] = useState(grad);
   const [posX, setPosX] = useState(0);
   const [posY, setPosY] = useState(0);
   const [angle, setAngle] = useState(0);
 
-  const [baseSize] = useState(() => {
-    let proposedWidth = window.innerWidth / 20;
-    if (proposedWidth < 50) proposedWidth = 50;
-    return proposedWidth;
-  });
   const [size] = useState(() => {
     let proposedWidth = window.innerWidth / 20;
     if (proposedWidth < 50) proposedWidth = 50;
@@ -31,64 +26,116 @@ function Home() {
   const animating = useRef(false);
   const target = useRef({ x: 0, y: 0 });
 
-  useEffect(() => {
-    function onClick(e) {
+  function spin1(e){
+      x1=90;
+      grad = Background1;
+      setXX(x1);
+      setGradiente(grad);
+
       const x = e.clientX;
       const y = e.clientY;
-
+  
       let newAngle = (180 / Math.PI) * (Math.atan2(posY - y, x - posX)) + 120;
-      console.log(`posY: ${posY} y: ${y} posX: ${posX} x: ${x}`)
-      console.log(newAngle);
       newAngle -= 90;
       if (newAngle < 0) {
         newAngle += 360;
       }
-
+  
       animating.current = true;
       target.current = { x: x - size / 2, y: y - size / 2 }
-
-
-
+  
+  
+  
       setFlying(true);
-
+  
       setAngle(360 - newAngle);
-
+  
       setPosX(x - size / 2);
       setPosY(y - size / 2);
-
-    }
-
-    window.addEventListener('click', onClick);
-
-    return () => window.removeEventListener('click', onClick);
-  }, [posX, posY, baseSize, size, flying]);
-
-  function rodar1(){
-      x=90;
-      grad = Background1;
-      setXX(x);
-      setGradiente(grad);
   }
 
-  function rodar2(){
-      x=60;
+  function spin2(e){
+      x1=60;
       grad = Background2;
-      setXX(x);
+      setXX(x1);
       setGradiente(grad);
+
+      const x = e.clientX;
+      const y = e.clientY;
+  
+      let newAngle = (180 / Math.PI) * (Math.atan2(posY - y, x - posX)) + 120;
+      newAngle -= 90;
+      if (newAngle < 0) {
+        newAngle += 360;
+      }
+  
+      animating.current = true;
+      target.current = { x: x - size / 2, y: y - size / 2 }
+  
+  
+  
+      setFlying(true);
+  
+      setAngle(360 - newAngle);
+  
+      setPosX(x - size / 2);
+      setPosY(y - size / 2);
   }
 
-  function rodar3(){
-      x=30;
+  function spin3(e){
+      x1=30;
       grad = Background3;
-      setXX(x);
+      setXX(x1);
       setGradiente(grad);
+
+      const x = e.clientX;
+      const y = e.clientY;
+  
+      let newAngle = (180 / Math.PI) * (Math.atan2(posY - y, x - posX)) + 120;
+      newAngle -= 90;
+      if (newAngle < 0) {
+        newAngle += 360;
+      }
+  
+      animating.current = true;
+      target.current = { x: x - size / 2, y: y - size / 2 }
+  
+  
+  
+      setFlying(true);
+  
+      setAngle(360 - newAngle);
+  
+      setPosX(x - size / 2);
+      setPosY(y - size / 2);
   }
 
-  function rodar4(){
-      x=0;
+  function spin4(e){
+      x1=0;
       grad = Background4;
-      setXX(x);
+      setXX(x1);
       setGradiente(grad);
+
+      const x = e.clientX;
+      const y = e.clientY;
+  
+      let newAngle = (180 / Math.PI) * (Math.atan2(posY - y, x - posX)) + 120;
+      newAngle -= 90;
+      if (newAngle < 0) {
+        newAngle += 360;
+      }
+  
+      animating.current = true;
+      target.current = { x: x - size / 2, y: y - size / 2 }
+  
+  
+  
+      setFlying(true);
+  
+      setAngle(360 - newAngle);
+  
+      setPosX(x - size / 2);
+      setPosY(y - size / 2);
   }
 
   const classes = useStyles();
@@ -115,16 +162,16 @@ function Home() {
         </div>
         <div className={classes.homeGeneral}>
           <div className={classes.button1}>
-            <button onClick={rodar1} style={{width:"10vw", height:"5vh"}}>1</button>
+            <button onClick={spin1} style={{width:"58px", height:"22px"}}>HOME</button>
           </div>
           <div className={classes.button2}>
-            <button onClick={rodar2} style={{width:"10vw", height:"5vh"}}>2</button>
+            <button onClick={spin2} style={{width:"93px", height:"24px"}}>CURSOS</button>
           </div>
           <div className={classes.button3}>
-            <button onClick={rodar3} style={{width:"10vw", height:"5vh"}}>3</button>
+            <button onClick={spin3} style={{width:"142px", height:"22px"}}>QUEM SOMOS</button>
           </div>
           <div className={classes.button4}>
-            <button onClick={rodar4} style={{width:"10vw", height:"5vh"}}>4</button>
+            <button onClick={spin4} style={{width:"98px", height:"22px"}}>CONTATO</button>
           </div>
         </div>
       </div>
