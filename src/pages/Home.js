@@ -15,6 +15,10 @@ function Home() {
   const [posX, setPosX] = useState(0);
   const [posY, setPosY] = useState(0);
   const [angle, setAngle] = useState(0);
+  const [colorHome, setColorHome] = useState('#100554');
+  const [colorCursos, setColorCursos] = useState('#100554');
+  const [colorQuemSomos, setColorQuemSomos] = useState('#100554');
+  const [colorContato, setColorContato] = useState('#100554');
 
   const [size] = useState(() => {
     let proposedWidth = window.innerWidth / 20;
@@ -51,7 +55,11 @@ function Home() {
       setAngle(360 - newAngle);
   
       setPosX(x - size / 2);
-      setPosY(y - size / 2);
+      setPosY((y - size / 2)+40);
+      setColorHome('white');
+      setColorCursos('#100554');
+      setColorQuemSomos('#100554');
+      setColorContato('#100554');
   }
 
   function spin2(e){
@@ -79,7 +87,11 @@ function Home() {
       setAngle(360 - newAngle);
   
       setPosX(x - size / 2);
-      setPosY(y - size / 2);
+      setPosY((y - size / 2)+40);
+      setColorHome('#100554');
+      setColorCursos('white');
+      setColorQuemSomos('#100554');
+      setColorContato('#100554');
   }
 
   function spin3(e){
@@ -107,7 +119,11 @@ function Home() {
       setAngle(360 - newAngle);
   
       setPosX(x - size / 2);
-      setPosY(y - size / 2);
+      setPosY((y - size / 2)+40);
+      setColorHome('#100554');
+      setColorCursos('#100554');
+      setColorQuemSomos('white');
+      setColorContato('#100554');
   }
 
   function spin4(e){
@@ -135,7 +151,11 @@ function Home() {
       setAngle(360 - newAngle);
   
       setPosX(x - size / 2);
-      setPosY(y - size / 2);
+      setPosY((y - size / 2)+40);
+      setColorHome('#100554');
+      setColorCursos('#100554');
+      setColorQuemSomos('#100554');
+      setColorContato('white');
   }
 
   const classes = useStyles();
@@ -162,16 +182,16 @@ function Home() {
         </div>
         <div className={classes.homeGeneral}>
           <div className={classes.button1}>
-            <button onClick={spin1} style={{width:"58px", height:"22px"}}>HOME</button>
+            <p onClick={spin1} style={{width:"58px", height:"22px", color: colorHome, cursor: 'pointer'}}>HOME</p>
           </div>
           <div className={classes.button2}>
-            <button onClick={spin2} style={{width:"93px", height:"24px"}}>CURSOS</button>
+            <p onClick={spin2} style={{width:"93px", height:"24px", color: colorCursos, cursor: 'pointer'}}>CURSOS</p>
           </div>
           <div className={classes.button3}>
-            <button onClick={spin3} style={{width:"142px", height:"22px"}}>QUEM SOMOS</button>
+            <p onClick={spin3} style={{width:"142px", height:"22px", color: colorQuemSomos, cursor: 'pointer'}}>QUEM SOMOS</p>
           </div>
           <div className={classes.button4}>
-            <button onClick={spin4} style={{width:"98px", height:"22px"}}>CONTATO</button>
+            <p onClick={spin4} style={{width:"98px", height:"22px", color: colorContato, cursor: 'pointer'}}>CONTATO</p>
           </div>
         </div>
       </div>

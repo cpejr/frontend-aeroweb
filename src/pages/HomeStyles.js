@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core";
+import { red } from "@material-ui/core/colors";
 import Background from "./ImagemDeFundo.svg";
 
 export const useStyles = makeStyles({
@@ -15,7 +16,7 @@ export const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
     backgroundImage: "url("+ Background +")",
-    backgroundSize: '1700px',
+    backgroundSize: '500px',
   },
   homeGeneral: {
     display: 'flex',
@@ -23,6 +24,8 @@ export const useStyles = makeStyles({
   button1: {
     paddingTop: '25vh',
     paddingLeft: '15vw',
+    opacity: 1,
+    color: red,
   },
   button2: {
     paddingTop: '35vh',
