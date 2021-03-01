@@ -182,16 +182,16 @@ function Home() {
         </div>
         <div className={classes.homeGeneral}>
           <div className={classes.button1}>
-            <p onClick={spin1} style={{width:"58px", height:"22px", color: colorHome, cursor: 'pointer'}}>HOME</p>
+            <p onClick={spin1} style={{color: colorHome, cursor: 'pointer'}}>HOME</p>
           </div>
           <div className={classes.button2}>
-            <p onClick={spin2} style={{width:"93px", height:"24px", color: colorCursos, cursor: 'pointer'}}>CURSOS</p>
+            <p onClick={spin2} style={{color: colorCursos, cursor: 'pointer'}}>CURSOS</p>
           </div>
           <div className={classes.button3}>
-            <p onClick={spin3} style={{width:"142px", height:"22px", color: colorQuemSomos, cursor: 'pointer'}}>QUEM SOMOS</p>
+            <p onClick={spin3} style={{color: colorQuemSomos, cursor: 'pointer'}}>QUEM SOMOS</p>
           </div>
           <div className={classes.button4}>
-            <p onClick={spin4} style={{width:"98px", height:"22px", color: colorContato, cursor: 'pointer'}}>CONTATO</p>
+            <p onClick={spin4} style={{color: colorContato, cursor: 'pointer'}}>CONTATO</p>
           </div>
         </div>
       </div>
