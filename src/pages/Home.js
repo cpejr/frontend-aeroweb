@@ -8,9 +8,9 @@ import airplane from './AviaoIcon.svg';
 
 function Home() {
 
-  var x1 = 90;
-  var grad = Background1;
-  const [xx, setXX] = useState();
+  let x1 = 90;
+  let grad = Background1;
+  const [posBackground, setPosBackground] = useState();
   const [gradiente, setGradiente] = useState(grad);
   const [posX, setPosX] = useState(0);
   const [posY, setPosY] = useState(0);
@@ -33,7 +33,7 @@ function Home() {
   function spin1(e){
       x1=90;
       grad = Background1;
-      setXX(x1);
+      setPosBackground(x1);
       setGradiente(grad);
 
       const x = e.clientX;
@@ -65,7 +65,7 @@ function Home() {
   function spin2(e){
       x1=60;
       grad = Background2;
-      setXX(x1);
+      setPosBackground(x1);
       setGradiente(grad);
 
       const x = e.clientX;
@@ -97,7 +97,7 @@ function Home() {
   function spin3(e){
       x1=30;
       grad = Background3;
-      setXX(x1);
+      setPosBackground(x1);
       setGradiente(grad);
 
       const x = e.clientX;
@@ -129,7 +129,7 @@ function Home() {
   function spin4(e){
       x1=0;
       grad = Background4;
-      setXX(x1);
+      setPosBackground(x1);
       setGradiente(grad);
 
       const x = e.clientX;
@@ -161,7 +161,7 @@ function Home() {
   const classes = useStyles();
   return(
     <div className={classes.homeContainer} style={{backgroundImage: "url("+ gradiente +")", height: "100vh"}}>
-      <div className={classes.homeContainerChildren} style={{backgroundPositionX: xx, backgroundPositionY: -200, height: "100vh"}}>
+      <div className={classes.homeContainerChildren} style={{backgroundPositionX: posBackground, backgroundPositionY: -200, height: "100vh"}}>
         <div className={classes.planeContainer} style={{
           position: 'absolute',
           left: posX,
