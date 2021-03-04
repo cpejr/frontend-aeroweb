@@ -12,8 +12,8 @@ function Home() {
   let grad = Background1;
   const [posBackground, setPosBackground] = useState();
   const [gradiente, setGradiente] = useState(grad);
-  const [posX, setPosX] = useState(0);
-  const [posY, setPosY] = useState(0);
+  const [posX, setPosX] = useState(200);
+  const [posY, setPosY] = useState(200);
   const [angle, setAngle] = useState(0);
   const [colorHome, setColorHome] = useState('#100554');
   const [colorCursos, setColorCursos] = useState('#100554');
