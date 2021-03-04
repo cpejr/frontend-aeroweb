@@ -12,8 +12,10 @@ function Home() {
   let grad = Background1;
   const [posBackground, setPosBackground] = useState();
   const [gradiente, setGradiente] = useState(grad);
-  const [posX, setPosX] = useState(0);
-  const [posY, setPosY] = useState(0);
+  const [posX, setPosX] = useState('15vw');
+  const [posXAngle, setPosXAngle] = useState(0);
+  const [posY, setPosY] = useState('30vh');
+  const [posYAngle, setPosYAngle] = useState(0);
   const [angle, setAngle] = useState(0);
   const [colorHome, setColorHome] = useState('#100554');
   const [colorCursos, setColorCursos] = useState('#100554');
@@ -21,8 +23,8 @@ function Home() {
   const [colorContato, setColorContato] = useState('#100554');
 
   const [size] = useState(() => {
-    let proposedWidth = window.innerWidth / 20;
-    if (proposedWidth < 50) proposedWidth = 50;
+    let proposedWidth = window.innerWidth / 40;
+    if (proposedWidth < 20) proposedWidth = 20;
     return proposedWidth;
   });
 
@@ -39,7 +41,7 @@ function Home() {
       const x = e.clientX;
       const y = e.clientY;
   
-      let newAngle = (180 / Math.PI) * (Math.atan2(posY - y, x - posX)) + 120;
+      let newAngle = (180 / Math.PI) * (Math.atan2(posYAngle - y, x - posXAngle)) + 120;
       newAngle -= 90;
       if (newAngle < 0) {
         newAngle += 360;
@@ -54,8 +56,10 @@ function Home() {
   
       setAngle(360 - newAngle);
   
-      setPosX(x - size / 2);
-      setPosY((y - size / 2)+40);
+      setPosX('15vw');
+      setPosY('30vh');
+      setPosXAngle(x - size / 2);
+      setPosYAngle((y - size / 2)+40);
       setColorHome('white');
       setColorCursos('#100554');
       setColorQuemSomos('#100554');
@@ -71,7 +75,7 @@ function Home() {
       const x = e.clientX;
       const y = e.clientY;
   
-      let newAngle = (180 / Math.PI) * (Math.atan2(posY - y, x - posX)) + 120;
+      let newAngle = (180 / Math.PI) * (Math.atan2(posYAngle - y, x - posXAngle)) + 120;
       newAngle -= 90;
       if (newAngle < 0) {
         newAngle += 360;
@@ -86,8 +90,10 @@ function Home() {
   
       setAngle(360 - newAngle);
   
-      setPosX(x - size / 2);
-      setPosY((y - size / 2)+40);
+      setPosX('30vw');
+      setPosY('40vh');
+      setPosXAngle(x - size / 2);
+      setPosYAngle((y - size / 2)+40);
       setColorHome('#100554');
       setColorCursos('white');
       setColorQuemSomos('#100554');
@@ -103,7 +109,7 @@ function Home() {
       const x = e.clientX;
       const y = e.clientY;
   
-      let newAngle = (180 / Math.PI) * (Math.atan2(posY - y, x - posX)) + 120;
+      let newAngle = (180 / Math.PI) * (Math.atan2(posYAngle - y, x - posXAngle)) + 120;
       newAngle -= 90;
       if (newAngle < 0) {
         newAngle += 360;
@@ -118,8 +124,10 @@ function Home() {
   
       setAngle(360 - newAngle);
   
-      setPosX(x - size / 2);
-      setPosY((y - size / 2)+40);
+      setPosX('43vw');
+      setPosY('65vh');
+      setPosXAngle(x - size / 2);
+      setPosYAngle((y - size / 2)+40);
       setColorHome('#100554');
       setColorCursos('#100554');
       setColorQuemSomos('white');
@@ -135,7 +143,7 @@ function Home() {
       const x = e.clientX;
       const y = e.clientY;
   
-      let newAngle = (180 / Math.PI) * (Math.atan2(posY - y, x - posX)) + 120;
+      let newAngle = (180 / Math.PI) * (Math.atan2(posYAngle - y, x - posXAngle)) + 120;
       newAngle -= 90;
       if (newAngle < 0) {
         newAngle += 360;
@@ -150,8 +158,10 @@ function Home() {
   
       setAngle(360 - newAngle);
   
-      setPosX(x - size / 2);
-      setPosY((y - size / 2)+40);
+      setPosX('69vw');
+      setPosY('82vh');
+      setPosXAngle(x - size / 2);
+      setPosYAngle((y - size / 2)+40);
       setColorHome('#100554');
       setColorCursos('#100554');
       setColorQuemSomos('#100554');
