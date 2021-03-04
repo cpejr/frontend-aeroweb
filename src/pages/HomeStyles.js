@@ -22,7 +22,7 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
 
-    //backgroundColor: '#BBBBBB'
+    backgroundColor: '#3467eb77'
   },
 
   backDrop: {
@@ -37,8 +37,46 @@ export const useStyles = makeStyles((theme) => ({
     elevation: 8
   },
 
+  cardContent: {
+    display: 'flex',
+    flexDirection: 'column',
+  }, 
+
+  cardTitle: {
+    width: '95%',
+
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+
+    marginBottom: 16
+  }, 
+
+  cardBody: {
+    width: '95%',
+    
+    display: 'flex',
+    flexDirection: 'column',
+  }, 
+
+  buttonContainer: {
+    width: '100%',
+
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
   button: {
-    borderRadius: 32
+    backgroundColor: '#3467eb',
+    '&:hover': {
+      backgroundColor: '#3467eb'
+    }
+  },
+
+  media: {
+    height: "30%",
+    width: "30%"
   },
 
   root: {
