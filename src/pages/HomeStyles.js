@@ -73,6 +73,6 @@ export const useStyles = makeStyles((theme) => ({
   planeContainer: {
     left: 0,
     top: 0,
-    transition: 'top 0.5s ease-in-out, left 0.5s ease-in-out, width 0.5s ease-in-out, height 0.5s ease-in-out',
+    transition: 'top 1.5s ease-in-out, left 1.5s ease-in-out, width 1.5s ease-in-out, height 1.5s ease-in-out',
   },
 }));
