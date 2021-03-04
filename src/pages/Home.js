@@ -21,8 +21,8 @@ function Home() {
   const [colorContato, setColorContato] = useState('#100554');
 
   const [size] = useState(() => {
-    let proposedWidth = window.innerWidth / 20;
-    if (proposedWidth < 50) proposedWidth = 50;
+    let proposedWidth = window.innerWidth / 40;
+    if (proposedWidth < 20) proposedWidth = 20;
     return proposedWidth;
   });
 
