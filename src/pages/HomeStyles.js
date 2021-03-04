@@ -16,7 +16,7 @@ export const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     backgroundImage: "url("+ Background +")",
-    backgroundSize: '500px',
+    backgroundSize: 'cover',
   },
   homeGeneral: {
     display: 'flex',
