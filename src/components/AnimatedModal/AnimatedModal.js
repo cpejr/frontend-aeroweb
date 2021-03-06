@@ -112,16 +112,7 @@ function AnimatedModal() {
 
   return (
     <div className={classes.container}>
-      <div className={classes.root}>
-        <Button
-          color='primary'
-          className={classes.buttonOut}
-          variant='text'
-          onClick={() => setOpen(true)}
-        >
-          Cursos
-        </Button>
-      </div>
+      
 
       <Modal
         open={open}
