@@ -1,11 +1,14 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import {FontStyle as fontWeightBold} from "@material-ui/core/styles/createTypography";
+import { FontStyle as fontWeightBold } from "@material-ui/core/styles/createTypography";
 
 const theme = createMuiTheme({
   overrides: {
     MuiButton: {
         contained: {
             backgroundColor: '#3467eb'
+        },
+        text: {
+            padding: 0
         }
     }
   },

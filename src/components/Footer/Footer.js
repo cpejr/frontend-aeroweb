@@ -6,6 +6,9 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     top: 'auto',
     bottom: 0,
+
+    background: 'transparent', 
+    boxShadow: 'none'
   },
 
   appBarContainer: {
@@ -15,8 +18,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-
-    backgroundColor: "#329ba8",
 
     [theme.breakpoints.down("600")]: {
       flexDirection: 'column',
