@@ -20,6 +20,8 @@ import {
   Typography 
 } from '@material-ui/core'
 import { ExpandMore } from "@material-ui/icons"
+import './Home.css'
+import zIndex from "@material-ui/core/styles/zIndex";
 
 function Home() {
 
@@ -38,6 +40,18 @@ function Home() {
   const [colorContato, setColorContato] = useState('#100554');
   const [open, setOpen] = useState(false);
 
+  // Parâmetros para o novo gradiente:
+  const [newGradient, setNewGradient] = useState();
+  const [oldGradient, setOldGradient] = useState("linear-gradient(214.44deg, #78CBEE -1.2%, #0E41C5 113.99%)");
+
+  const [change, setChange] = useState(false);
+
+  const home = "linear-gradient(214.44deg, #78CBEE -1.2%, #0E41C5 113.99%)";
+  const cursos = "linear-gradient(258.81deg, #78CBEE -18.81%, #0E41C5 109.84%)";
+  const quemSomos = "linear-gradient(346.31deg, #78CBEE 16.62%, #0E41C5 99.07%)";
+  const contato = "linear-gradient(83.83deg, #78CBEE 3.06%, #0E41C5 96.88%)";
+  //--------------------------
+
   const [size] = useState(() => {
     let proposedWidth = window.innerWidth / 40;
     if (proposedWidth < 20) proposedWidth = 20;
@@ -49,11 +63,18 @@ function Home() {
   const target = useRef({ x: 0, y: 0 });
 
   function spin1(e) {
+    //Para a animação da linha:
     x1 = 90;
-    grad = Background1;
     setPosBackground(x1);
-    setGradiente(grad);
+    // Para a animação do gradiente:
+    setNewGradient(home);
+    setChange(true);
+    setTimeout(() => {
+      setOldGradient(home)
+      console.log("cabou Home")
+    }, 1000);
 
+    // Para a animação do avião:
     const x = e.clientX;
     const y = e.clientY;
 
@@ -76,18 +97,21 @@ function Home() {
     setPosY('30vh');
     setPosXAngle(x - size / 2);
     setPosYAngle((y - size / 2) + 40);
-    setColorHome('white');
-    setColorCursos('#100554');
-    setColorQuemSomos('#100554');
-    setColorContato('#100554');
   }
 
   function spin2(e) {
+    //Para a animação da linha:
     x1 = 60;
-    grad = Background2;
     setPosBackground(x1);
-    setGradiente(grad);
+    //Para a animação do gradiente:
+    setNewGradient(cursos);
+    setChange(true);
+    setTimeout(() => {
+      setOldGradient(cursos)
+      console.log("cabou Cursos")
+    }, 1000);
 
+    //Para a animação do avião:
     const x = e.clientX;
     const y = e.clientY;
 
@@ -102,7 +126,6 @@ function Home() {
 
 
 
-
     setFlying(true);
 
     setAngle(360 - newAngle);
@@ -111,20 +134,27 @@ function Home() {
     setPosY('40vh');
     setPosXAngle(x - size / 2);
     setPosYAngle((y - size / 2) + 40);
-    setColorHome('#100554');
-    setColorCursos('white');
-    setColorQuemSomos('#100554');
-    setColorContato('#100554');
 
-    setOpen(true);
+    //Para a animação do modal:
+    setTimeout(() => {
+      setOpen(true);
+    }, 1200);
   }
 
   function spin3(e) {
+    //Para a animação da linha:
     x1 = 30;
-    grad = Background3;
     setPosBackground(x1);
-    setGradiente(grad);
 
+    //Para a animação do gradiente:
+    setNewGradient(quemSomos);
+    setChange(true);
+    setTimeout(() => {
+      setOldGradient(quemSomos)
+      console.log("cabou quem somos")
+    }, 1000);
+    
+    //Para a animação do avião:
     const x = e.clientX;
     const y = e.clientY;
 
@@ -147,18 +177,22 @@ function Home() {
     setPosY('65vh');
     setPosXAngle(x - size / 2);
     setPosYAngle((y - size / 2) + 40);
-    setColorHome('#100554');
-    setColorCursos('#100554');
-    setColorQuemSomos('white');
-    setColorContato('#100554');
   }
 
   function spin4(e) {
+    //Para a animação da linha:
     x1 = 0;
-    grad = Background4;
     setPosBackground(x1);
-    setGradiente(grad);
 
+    //Para a animação do gradiente:
+    setNewGradient(contato);
+    setChange(true);
+    setTimeout(() => {
+      setOldGradient(contato)
+      console.log("cabou contato")
+    }, 1000);
+    
+    //Para a animação do avião:
     const x = e.clientX;
     const y = e.clientY;
 
@@ -172,7 +206,6 @@ function Home() {
     target.current = { x: x - size / 2, y: y - size / 2 }
 
 
-
     setFlying(true);
 
     setAngle(360 - newAngle);
@@ -181,16 +214,12 @@ function Home() {
     setPosY('82vh');
     setPosXAngle(x - size / 2);
     setPosYAngle((y - size / 2) + 40);
-    setColorHome('#100554');
-    setColorCursos('#100554');
-    setColorQuemSomos('#100554');
-    setColorContato('white');
   }
 
   const classes = useStyles();
   return (
-    <div className={classes.homeContainer} style={{ backgroundImage: "url(" + gradiente + ")", height: "100vh" }}>
-      <div className={classes.homeContainerChildren} style={{ backgroundPositionX: posBackground, backgroundPositionY: -200, height: "100vh" }}>
+    <div className={classes.homeContainer}>
+      <div className={classes.homeContainerChildren} >
         <div className={classes.planeContainer} style={{
           position: 'absolute',
           left: posX,
@@ -198,7 +227,8 @@ function Home() {
           transform: `rotate(${angle}deg)`,
           transformOrigin: 'center',
           width: size,
-          height: size
+          height: size,
+          zIndex: "200"
         }}>
           <img
             className={"plane" + (flying ? " flying" : "")}
@@ -209,17 +239,20 @@ function Home() {
             onAnimationEnd={(e) => { setFlying(false) }}
           />
         </div>
-        <div className={classes.homeGeneral}>
-          <div className={classes.button1}>
+        <div className="gradientVelho" style={{backgroundImage: oldGradient }}>
+
+          <div className={( change ? "gradienteMutavel" : "gradienteImutavel")} onAnimationEnd={()=>{setChange(false)}} style={{backgroundImage: newGradient}}></div>
+          <div className={classes.homeContainerChildren} style={{backgroundPositionX: posBackground, backgroundPositionY: -200, height: "100vh"}}></div>
+          <div className={classes.button1} style={{ zIndex: "100"}}>
             <p onClick={spin1} style={{ color: colorHome, cursor: 'pointer' }}>HOME</p>
           </div>
-          <div className={classes.button2}>
+          <div className={classes.button2} style={{ zIndex: "100"}}>
             <p onClick={spin2} style={{ color: colorCursos, cursor: 'pointer' }}>CURSOS</p>
           </div>
-          <div className={classes.button3}>
+          <div className={classes.button3} style={{ zIndex: "100"}}>
             <p onClick={spin3} style={{ color: colorQuemSomos, cursor: 'pointer' }}>QUEM SOMOS</p>
           </div>
-          <div className={classes.button4}>
+          <div className={classes.button4} style={{ zIndex: "100"}}>
             <p onClick={spin4} style={{ color: colorContato, cursor: 'pointer' }}>CONTATO</p>
           </div>
         </div>
