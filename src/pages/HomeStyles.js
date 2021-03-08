@@ -9,6 +9,8 @@ export const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     backgroundSize: '1700px',
+
+    //overflow: 'scroll'
   },
   homeContainerChildren: {
     width: '100%',
@@ -38,7 +40,7 @@ export const useStyles = makeStyles((theme) => ({
   button2: {
     paddingTop: '35vh',
     paddingLeft: '10vw',
-    width:"93px",
+    width:"15%",
     height:"24px",
     [theme.breakpoints.down("765")]: {
       paddingLeft: '5vw',
@@ -90,9 +92,6 @@ export const useStyles = makeStyles((theme) => ({
     maxWidth: 360,
   },
 
-  modalBackground: {
-    //backgroundColor:' #3467eb77'
-  },
 
   fadeRoot: {
     width: '100%',
@@ -103,7 +102,6 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
 
-    //backgroundColor: '#3467eb77'
   },
 
   backDrop: {
@@ -113,9 +111,15 @@ export const useStyles = makeStyles((theme) => ({
 
   card: {
     maxWidth: '50%',
+    [theme.breakpoints.down("765")]: {
+      maxWidth: '80%',
+      maxHeight: '90%'
+    },
 
     padding: 16,
-    elevation: 8
+    elevation: 8,
+
+    overflow: 'auto'
   },
 
   cardContent: {
@@ -161,9 +165,77 @@ export const useStyles = makeStyles((theme) => ({
     }
   },
 
-  media: {
-    height: "30%",
-    width: "30%"
+  cardButtons: {
+    width: '100%',
+    background: 'transparent', 
   },
+
+  cardContentButtons: {
+    padding: 2,
+    '&:last-child': {
+      paddingBottom: 2
+    }
+  },
+
+  cardMobile: {
+    width: '100%',
+    height: '100%',
+
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+
+    position: 'relative',
+    top: '75%',
+    //animation: '$upCard 1500ms ease-in-out forwards'
+  },
+
+  cardMobileUp: {
+    width: '100%',
+    height: '100%',
+
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+
+    position: 'relative',
+    top: '75%',
+    animation: '$upCard 1500ms ease-in-out forwards'
+  },
+
+  cardMobileDown: {
+    width: '100%',
+    height: '100%',
+
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+
+    position: 'relative',
+    top: '75%',
+    animation: '$downCard 1500ms ease-in-out forwards'
+  },
+
+  // animações de transição dos modais
+  "@keyframes upCard": {
+    "0%": {
+      transform: "translateY(0)"
+    },
+    "100%": {
+      transform: "translateY(-75%)",
+    }
+  },
+
+  "@keyframes downCard": {
+    "0%": {
+      transform: "translateY(-75%)"
+    },
+    "100%": {
+      transform: "translateY(0)",
+    }
+  }
 
 }));

@@ -10,7 +10,7 @@ const theme = createMuiTheme({
         text: {
             padding: 0
         }
-    }
+    },
   },
 
   palette: {
