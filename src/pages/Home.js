@@ -222,6 +222,7 @@ function Home() {
 
   const classes = useStyles()
   const [slideStyle, setSlideStyle] = useState(classes.cardMobile)
+  const [listStyle, setListStyle] = useState(classes.cardButtons);
 
   return (
     <div className={classes.homeContainer}>
@@ -254,6 +255,19 @@ function Home() {
           </div>
           <div className={classes.button2} style={{ zIndex: "100"}}>
             <p onClick={spin2} style={{ color: colorCursos, cursor: 'pointer' }}>CURSOS</p>
+            <Card className={classes.cardButtons}>
+              <CardContent className={classes.cardContentButtons}>
+                <ButtonGroup
+                  orientation="vertical"
+                  color="primary"
+                  size="small"
+                >
+                  <Button style={{ color: '#FFFFFF' }}> Simulados ICAO - comentados</Button>
+                  <Button style={{ color: '#FFFFFF' }}> Curso Inglês ICAO</Button>
+                  <Button style={{ color: '#FFFFFF' }}> Curso Cartas Jappesen</Button>
+                </ButtonGroup>
+              </CardContent>
+            </Card>
           </div>
           <div className={classes.button3} style={{ zIndex: "100"}}>
             <p onClick={spin3} style={{ color: colorQuemSomos, cursor: 'pointer' }}>QUEM SOMOS</p>

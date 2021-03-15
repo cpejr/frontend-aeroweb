@@ -168,6 +168,25 @@ export const useStyles = makeStyles((theme) => ({
   cardButtons: {
     width: '100%',
     background: 'transparent', 
+    height: 0,
+
+    animation: '$downList 1000ms ease-in-out forwards'
+  },
+
+  cardButtonsUp: {
+    width: '100%',
+    background: 'transparent', 
+    height: 0,
+
+    animation: '$upList 1000ms ease-in-out forwards'
+  },
+
+  cardButtonsDown: {
+    width: '100%',
+    background: 'transparent', 
+    height: 0,
+
+    animation: '$downList 1000ms ease-in-out forwards'
   },
 
   cardContentButtons: {
@@ -235,6 +254,24 @@ export const useStyles = makeStyles((theme) => ({
     },
     "100%": {
       transform: "translateY(0)",
+    }
+  },
+
+  "@keyframes downList": {
+    "0%": {
+      height: 0,
+    },
+    "100%": {
+      height: 90,
+    }
+  },
+
+  "@keyframes upList": {
+    "0%": {
+      height: 90,
+    },
+    "100%": {
+      height: 0,
     }
   }
 
