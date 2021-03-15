@@ -23,6 +23,7 @@ import {
 import { ExpandMore, ExpandLess } from "@material-ui/icons"
 import './Home.css'
 import zIndex from "@material-ui/core/styles/zIndex";
+import ModalCursos from "../components/ModalCursos/ModalCursos";
 
 function Home() {
 
@@ -139,7 +140,7 @@ function Home() {
 
     //Para a animação do modal:
     setTimeout(() => {
-      setOpen(true);
+      // setOpen(true);
     }, 1200);
   }
 
@@ -180,7 +181,7 @@ function Home() {
     setPosXAngle(x - size / 2);
     setPosYAngle((y - size / 2) + 40);
 
-    setOpenMobile(true);
+    // setOpenMobile(true);
   }
 
   function spin4(e) {
@@ -223,6 +224,8 @@ function Home() {
   const classes = useStyles()
   const [slideStyle, setSlideStyle] = useState(classes.cardMobile)
 
+  const listaCursos = ["curso1", "curso2", "curso3"];
+
   return (
     <div className={classes.homeContainer}>
       <div className={classes.homeContainerChildren} >
@@ -253,7 +256,19 @@ function Home() {
             <p onClick={spin1} style={{ color: colorHome, cursor: 'pointer' }}>HOME</p>
           </div>
           <div className={classes.button2} style={{ zIndex: "100"}}>
-            <p onClick={spin2} style={{ color: colorCursos, cursor: 'pointer' }}>CURSOS</p>
+            <p onClick={spin2} style={{ color: colorCursos, cursor: 'pointer' }}>CURSOSs</p>
+            {/* Fazendo o modal do cursos */}
+            {/* <li class="dropdown dropdown-6">
+              Scale Down
+              <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-6">
+                <li class="dropdown_item-1">Item 1</li>
+                <li class="dropdown_item-2">Item 2</li>
+                <li class="dropdown_item-3">Item 3</li>
+                <li class="dropdown_item-4">Item 4</li>
+                <li class="dropdown_item-5">Item 5</li>
+              </ul>
+            </li> */}
+            {listaCursos.map((item)=>(<ModalCursos nomeDoCurso={item}/>))}
           </div>
           <div className={classes.button3} style={{ zIndex: "100"}}>
             <p onClick={spin3} style={{ color: colorQuemSomos, cursor: 'pointer' }}>QUEM SOMOS</p>

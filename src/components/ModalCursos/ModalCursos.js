@@ -1,11 +1,11 @@
 import React from 'react';
 import './ModalCursos.css'
 
-function ModalCursos(){
+function ModalCursos(props){
 
     return(
         <div>
-
+            {props.nomeDoCurso}
         </div>
     );
 }
