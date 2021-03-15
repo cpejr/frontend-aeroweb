@@ -176,6 +176,7 @@ export const useStyles = makeStyles((theme) => ({
   cardButtonsUp: {
     width: '100%',
     background: 'transparent', 
+    backgroundColor: '#CCCCCC77',
 
     animation: '$upList 1000ms ease-in-out forwards'
   },
@@ -183,6 +184,8 @@ export const useStyles = makeStyles((theme) => ({
   cardButtonsDown: {
     width: '100%',
     background: 'transparent', 
+    backgroundColor: '#CCCCCC77',
+    backdropFilter: 'blur(5px)',
 
     animation: '$downList 1000ms ease-in-out forwards'
   },
@@ -191,7 +194,19 @@ export const useStyles = makeStyles((theme) => ({
     padding: 2,
     '&:last-child': {
       paddingBottom: 2
-    }
+    },
+    background: 'transparent'
+  },
+
+  buttonsList: {
+    color: '#FFFFFF', 
+    backgroundColor: '#CCCCCC77', 
+    backdropFilter: 'blur(5px)',
+    background: 'transparent'
+  },
+
+  buttonsGroup: {
+    //backgroundColor: '#000000'
   },
 
   cardMobile: {

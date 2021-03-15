@@ -279,10 +279,11 @@ function Home() {
                   orientation="vertical"
                   color="primary"
                   size="small"
+                  className={classes.buttonsGroup}
                 >
-                  <Button style={{ color: '#FFFFFF' }} onClick={openModal}> Simulados ICAO - comentados</Button>
-                  <Button style={{ color: '#FFFFFF' }} onClick={openModal}> Curso Inglês ICAO</Button>
-                  <Button style={{ color: '#FFFFFF' }} onClick={openModal}> Curso Cartas Jappesen</Button>
+                  <Button className={classes.buttonsList} onClick={openModal} variant='text'> Simulados ICAO - comentados</Button>
+                  <Button className={classes.buttonsList} onClick={openModal} variant='text'> Curso Inglês ICAO</Button>
+                  <Button className={classes.buttonsList} onClick={openModal} variant='text'> Curso Cartas Jappesen</Button>
                 </ButtonGroup>
               </CardContent>
             </Card>
