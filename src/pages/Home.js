@@ -99,6 +99,10 @@ function Home() {
     setPosY('30vh');
     setPosXAngle(x - size / 2);
     setPosYAngle((y - size / 2) + 40);
+
+    if(listStyle === classes.cardButtonsDown){
+      setListStyle(classes.cardButtonsUp);
+    }
   }
 
   function spin2(e) {
@@ -137,10 +141,11 @@ function Home() {
     setPosXAngle(x - size / 2);
     setPosYAngle((y - size / 2) + 40);
 
-    //Para a animação do modal:
-    setTimeout(() => {
-      setOpen(true);
-    }, 1200);
+    if(listStyle === classes.cardButtons || listStyle === classes.cardButtonsUp) {
+      setListStyle(classes.cardButtonsDown);
+    } else {
+      setListStyle(classes.cardButtonsUp);
+    }
   }
 
   function spin3(e) {
@@ -181,6 +186,10 @@ function Home() {
     setPosYAngle((y - size / 2) + 40);
 
     setOpenMobile(true);
+
+    if(listStyle === classes.cardButtonsDown){
+      setListStyle(classes.cardButtonsUp);
+    }
   }
 
   function spin4(e) {
@@ -218,6 +227,15 @@ function Home() {
     setPosY('82vh');
     setPosXAngle(x - size / 2);
     setPosYAngle((y - size / 2) + 40);
+
+    if(listStyle === classes.cardButtonsDown){
+      setListStyle(classes.cardButtonsUp);
+    }
+  }
+
+  function openModal() {
+    // Para a animação do modal:
+    setOpen(true)
   }
 
   const classes = useStyles()
@@ -255,16 +273,16 @@ function Home() {
           </div>
           <div className={classes.button2} style={{ zIndex: "100"}}>
             <p onClick={spin2} style={{ color: colorCursos, cursor: 'pointer' }}>CURSOS</p>
-            <Card className={classes.cardButtons}>
+            <Card className={listStyle}>
               <CardContent className={classes.cardContentButtons}>
                 <ButtonGroup
                   orientation="vertical"
                   color="primary"
                   size="small"
                 >
-                  <Button style={{ color: '#FFFFFF' }}> Simulados ICAO - comentados</Button>
-                  <Button style={{ color: '#FFFFFF' }}> Curso Inglês ICAO</Button>
-                  <Button style={{ color: '#FFFFFF' }}> Curso Cartas Jappesen</Button>
+                  <Button style={{ color: '#FFFFFF' }} onClick={openModal}> Simulados ICAO - comentados</Button>
+                  <Button style={{ color: '#FFFFFF' }} onClick={openModal}> Curso Inglês ICAO</Button>
+                  <Button style={{ color: '#FFFFFF' }} onClick={openModal}> Curso Cartas Jappesen</Button>
                 </ButtonGroup>
               </CardContent>
             </Card>

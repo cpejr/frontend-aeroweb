@@ -170,13 +170,12 @@ export const useStyles = makeStyles((theme) => ({
     background: 'transparent', 
     height: 0,
 
-    animation: '$downList 1000ms ease-in-out forwards'
+    //animation: '$downList 1000ms ease-in-out forwards'
   },
 
   cardButtonsUp: {
     width: '100%',
     background: 'transparent', 
-    height: 0,
 
     animation: '$upList 1000ms ease-in-out forwards'
   },
@@ -184,7 +183,6 @@ export const useStyles = makeStyles((theme) => ({
   cardButtonsDown: {
     width: '100%',
     background: 'transparent', 
-    height: 0,
 
     animation: '$downList 1000ms ease-in-out forwards'
   },
@@ -234,7 +232,7 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
 
     position: 'relative',
-    top: '75%',
+    top: '75%', 
     animation: '$downCard 1500ms ease-in-out forwards'
   },
 
